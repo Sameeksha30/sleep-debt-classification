@@ -1,0 +1,41 @@
+{
+  "target": "sleep_debt_category",
+  "excluded_columns": [
+    "user_id"
+  ],
+  "feature_columns": [
+    "age",
+    "gender",
+    "chronotype",
+    "occupation",
+    "bedtime_hour",
+    "screen_time_before_bed_min",
+    "primary_app_category",
+    "screen_brightness_pct",
+    "blue_light_filter_on",
+    "caffeine_intake_mg",
+    "caffeine_last_hour",
+    "physical_activity_min",
+    "room_temperature_f",
+    "ambient_noise_db",
+    "sleep_onset_latency_min",
+    "total_sleep_hours",
+    "rem_sleep_pct",
+    "deep_sleep_pct",
+    "awakenings_count",
+    "sleep_efficiency_pct",
+    "next_day_fatigue_score"
+  ],
+  "classes": [
+    "Mild",
+    "Moderate",
+    "No Debt",
+    "Severe"
+  ],
+  "train_test_split": {
+    "test_size": 0.2,
+    "random_state": 42,
+    "stratify": true
+  },
+  "sklearn_version": "1.8.0"
+}
