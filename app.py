@@ -2,56 +2,102 @@ import streamlit as st
 import pandas as pd
 import joblib
 from pathlib import Path
+from sklearn.metrics import (accuracy_score, roc_auc_score, precision_score,
+                             recall_score, f1_score, matthews_corrcoef,
+                             confusion_matrix, classification_report)
 
-st.set_page_config(page_title="Sleep Debt Classifier", page_icon="😴", layout="wide")
-st.title("Sleep Debt Category Prediction")
-st.write("Upload a CSV containing the sleep and screen-time input features. "
-         "The app predicts No Debt, Mild, Moderate, or Severe.")
+st.set_page_config(page_title='Sleep Debt Classification', layout='wide')
+st.title('Sleep Debt and Screen Time — Model Evaluation')
+st.write('Upload the **held-out test CSV**, including the target column `sleep_debt_category`. Models are loaded from saved files; no retraining occurs.')
 
-MODEL_DIR = Path(__file__).parent / "model"
-model_files = {
-    "Logistic Regression": "logistic_regression.joblib",
-    "Decision Tree": "decision_tree.joblib",
-    "K-Nearest Neighbors": "knn.joblib",
-    "Gaussian Naive Bayes": "gaussian_naive_bayes.joblib",
-    "Support Vector Machine": "svm.joblib",
+MODEL_DIR = Path(__file__).resolve().parent / 'model'
+MODELS = {
+    'Logistic Regression': 'logistic_regression.joblib',
+    'Decision Tree': 'decision_tree.joblib',
+    'KNN': 'knn.joblib',
+    'Gaussian Naive Bayes': 'gaussian_naive_bayes.joblib',
+    'Support Vector Machine': 'svm.joblib',
 }
-choice = st.selectbox("Choose a classification model", list(model_files))
-uploaded = st.file_uploader("Upload test data (CSV)", type=["csv"])
+TARGET = 'sleep_debt_category'
 
-st.caption("The user_id and sleep_debt_category columns are not used as model inputs. "
-           "If a target column is included, it is retained only for optional comparison.")
+@st.cache_resource
+def load_model(filename):
+    return joblib.load(MODEL_DIR / filename)
+
+uploaded = st.file_uploader('Upload test_data.csv', type=['csv'])
+selected = st.selectbox('Choose model for detailed evaluation', list(MODELS))
 
 if uploaded is not None:
-    data = pd.read_csv(uploaded)
-    target = "sleep_debt_category"
-    features = data.drop(columns=[target, "user_id"], errors="ignore")
+    df = pd.read_csv(uploaded)
+    if df.empty:
+        st.error('Uploaded CSV is empty.')
+        st.stop()
+    if TARGET not in df.columns:
+        st.error(f'Test CSV must contain the target column: {TARGET}')
+        st.stop()
+    if df[TARGET].isna().any():
+        st.error('The target column contains missing labels.')
+        st.stop()
+    X_test = df.drop(columns=[TARGET, 'user_id'], errors='ignore')
+    y_test = df[TARGET]
+    results = []
+    details = {}
+    for name, filename in MODELS.items():
+        try:
+            model = load_model(filename)
+            y_pred = model.predict(X_test)
+            labels = model.classes_
+            y_prob = model.predict_proba(X_test)
+            # Multiclass AUC requires at least two classes and may be undefined
+            # if some trained classes are absent from the uploaded test sample.
+            try:
+                if set(y_test.unique()) == set(labels):
+                    auc = roc_auc_score(y_test, y_prob, labels=labels,
+                                        multi_class='ovr', average='weighted')
+                else:
+                    auc = float('nan')
+            except ValueError:
+                auc = float('nan')
+            results.append({
+                'Model': name,
+                'Accuracy': accuracy_score(y_test, y_pred),
+                'AUC': auc,
+                'Precision': precision_score(y_test, y_pred, average='weighted', zero_division=0),
+                'Recall': recall_score(y_test, y_pred, average='weighted', zero_division=0),
+                'F1': f1_score(y_test, y_pred, average='weighted', zero_division=0),
+                'MCC': matthews_corrcoef(y_test, y_pred),
+            })
+            details[name] = (y_pred, labels)
+        except Exception as exc:
+            st.error(f'Failed to evaluate {name}: {exc}')
+            st.stop()
 
-    model_path = MODEL_DIR / model_files[choice]
-    model = joblib.load(model_path)
+    st.subheader('Comparison: all five saved classifiers')
+    scores = pd.DataFrame(results).set_index('Model')
+    st.dataframe(scores.style.format('{:.4f}', na_rep='N/A'), use_container_width=True)
+    st.caption('AUC: multiclass weighted One-vs-Rest; Precision/Recall/F1: weighted. N/A means AUC is undefined for the uploaded class distribution.')
 
-    try:
-        predictions = model.predict(features)
-        output = data.copy()
-        output["predicted_sleep_debt_category"] = predictions
+    st.subheader(f'Detailed results: {selected}')
+    row = scores.loc[selected]
+    cols = st.columns(3)
+    for i, metric in enumerate(['Accuracy', 'AUC', 'Precision', 'Recall', 'F1', 'MCC']):
+        val = row[metric]
+        cols[i % 3].metric(metric, f'{val:.4f}' if pd.notna(val) else 'N/A')
 
-        if target in data.columns:
-            output["prediction_correct"] = (
-                output[target].astype(str) == output["predicted_sleep_debt_category"].astype(str)
-            )
-            st.metric("Accuracy on uploaded labelled rows",
-                      f"{output['prediction_correct'].mean():.2%}")
+    y_pred, labels = details[selected]
+    st.markdown('**Confusion matrix** (rows = actual, columns = predicted)')
+    matrix = confusion_matrix(y_test, y_pred, labels=labels)
+    cm_df = pd.DataFrame(matrix, index=[f'Actual: {x}' for x in labels],
+                         columns=[f'Predicted: {x}' for x in labels])
+    st.dataframe(cm_df, use_container_width=True)
+    st.markdown('**Classification report**')
+    report = classification_report(y_test, y_pred, labels=labels,
+                                   output_dict=True, zero_division=0)
+    st.dataframe(pd.DataFrame(report).transpose().round(4), use_container_width=True)
 
-        st.subheader("Predictions")
-        st.dataframe(output, use_container_width=True)
-        st.download_button(
-            "Download predictions as CSV",
-            output.to_csv(index=False).encode("utf-8"),
-            file_name="sleep_debt_predictions.csv",
-            mime="text/csv"
-        )
-    except Exception as exc:
-        st.error(f"Could not process this file: {exc}")
-        st.info("Check that the CSV contains the same feature columns used during training.")
+    predictions = df.copy()
+    predictions['predicted_sleep_debt_category'] = y_pred
+    st.download_button('Download predictions', predictions.to_csv(index=False).encode('utf-8'),
+                       file_name='sleep_debt_predictions.csv', mime='text/csv')
 else:
-    st.info("Try the included test_data.csv file to see example predictions.")
+    st.info('Upload the test_data.csv from your repository to evaluate all five saved models.')
