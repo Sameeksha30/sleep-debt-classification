@@ -1,0 +1,101 @@
+age,gender,chronotype,occupation,bedtime_hour,screen_time_before_bed_min,primary_app_category,screen_brightness_pct,blue_light_filter_on,caffeine_intake_mg,caffeine_last_hour,physical_activity_min,room_temperature_f,ambient_noise_db,sleep_onset_latency_min,total_sleep_hours,rem_sleep_pct,deep_sleep_pct,awakenings_count,sleep_efficiency_pct,next_day_fatigue_score,sleep_debt_category
+16,Female,Night Owl,Student,0.94,31,Streaming,100,False,20,11.5,30,69.5,33.1,29.5,7.3,18.8,15.5,1,79.4,3.59,Mild
+20,Male,Intermediate,Professional,23.57,31,Short-Form Video,27,True,56,10.4,8,66.9,24.8,19.3,6.86,18.9,17.1,2,85.4,3.96,Moderate
+24,Non-Binary,Early Bird,Student,22.31,45,Social Media,51,True,43,10.9,56,71.9,40.5,24.3,8.67,16.8,17.6,4,80.9,3.82,No Debt
+41,Female,Night Owl,Professional,0.81,133,Streaming,100,True,30,18.3,20,62.0,41.3,31.5,5.56,14.3,16.1,1,82.5,5.19,Moderate
+40,Female,Night Owl,Unemployed,0.92,41,Social Media,76,False,7,10.6,35,61.6,32.9,29.6,6.41,18.8,18.9,2,82.1,4.98,Mild
+17,Female,Intermediate,Unemployed,22.79,22,Short-Form Video,58,True,19,14.3,1,69.6,48.1,30.7,7.29,18.2,15.9,2,82.8,3.48,Mild
+41,Female,Night Owl,Professional,0.21,13,Short-Form Video,26,False,82,17.0,27,72.2,39.8,26.1,6.88,13.0,16.7,4,81.8,4.86,Mild
+36,Male,Night Owl,Professional,2.12,38,Messaging,62,False,4,16.8,8,68.4,37.6,19.6,6.02,21.5,17.9,2,87.0,4.62,Mild
+32,Female,Night Owl,Student,1.72,80,Short-Form Video,67,True,20,8.8,20,74.1,35.1,31.2,5.51,15.8,16.7,1,86.7,5.49,Moderate
+53,Male,Early Bird,Professional,22.57,87,Streaming,58,False,1,15.3,26,68.9,41.7,24.4,5.83,17.2,17.5,3,81.3,4.3,Mild
+18,Male,Early Bird,Professional,22.84,60,Short-Form Video,80,False,196,17.7,21,68.9,15.9,33.8,7.2,12.5,15.6,1,84.8,4.32,Mild
+22,Female,Intermediate,Retired,0.51,49,Short-Form Video,81,True,13,18.9,34,68.6,17.3,33.6,7.13,16.0,21.3,3,78.5,4.27,Mild
+22,Female,Early Bird,Professional,21.97,38,Streaming,100,False,55,22.1,37,74.0,35.5,23.4,7.63,16.4,17.7,2,82.2,4.29,Mild
+21,Male,Early Bird,Student,22.15,78,Short-Form Video,70,False,63,14.1,44,72.1,41.4,37.8,7.18,13.9,16.1,1,76.3,4.74,Mild
+44,Non-Binary,Night Owl,Unemployed,0.7,43,Short-Form Video,86,True,125,18.8,15,76.7,31.9,33.8,5.75,16.3,16.9,6,74.0,6.51,Moderate
+16,Female,Intermediate,Student,22.97,50,Short-Form Video,49,False,8,16.4,10,68.4,39.5,35.2,7.97,14.8,19.7,3,79.4,4.36,Mild
+32,Non-Binary,Intermediate,Professional,23.3,30,Streaming,67,False,31,19.1,17,64.8,42.7,22.3,7.24,18.5,16.2,0,91.4,3.19,No Debt
+40,Male,Night Owl,Unemployed,22.7,162,Streaming,53,False,69,22.1,26,72.6,40.7,37.0,6.89,14.6,15.3,4,80.0,5.22,Mild
+17,Female,Intermediate,Professional,22.51,68,Streaming,74,True,85,9.3,78,68.6,27.6,32.5,8.03,15.9,20.0,2,79.7,3.82,No Debt
+24,Female,Intermediate,Student,22.93,17,Gaming,84,False,33,12.8,11,75.1,46.7,35.3,8.08,17.6,17.4,4,74.3,3.88,No Debt
+18,Female,Night Owl,Retired,1.15,63,Short-Form Video,72,False,65,6.9,20,66.2,35.6,32.6,6.06,15.3,17.2,0,85.0,5.13,Moderate
+35,Female,Night Owl,Student,0.11,64,Streaming,66,True,44,19.3,20,71.6,34.8,26.7,5.37,20.4,16.5,1,79.6,5.08,Moderate
+16,Male,Intermediate,Student,23.99,84,Messaging,100,True,72,16.4,0,72.0,16.7,35.2,7.31,15.8,14.7,8,75.1,5.17,Mild
+21,Male,Early Bird,Student,21.59,13,Short-Form Video,77,False,111,15.4,17,73.4,40.2,24.0,7.58,14.9,16.7,1,82.1,3.8,Mild
+22,Male,Night Owl,Student,1.34,20,Streaming,23,False,81,12.9,97,69.2,23.9,17.6,7.96,17.7,21.0,0,92.1,3.62,Mild
+27,Male,Intermediate,Freelancer,23.59,23,Short-Form Video,76,True,89,10.6,22,73.2,40.6,23.4,6.99,16.3,15.2,1,88.1,3.73,Mild
+16,Male,Intermediate,Student,23.2,15,Messaging,57,False,45,11.9,4,71.6,32.0,26.1,8.34,15.6,16.4,1,88.0,2.1,No Debt
+44,Female,Night Owl,Unemployed,2.76,34,E-Reading,91,False,73,14.7,69,67.4,16.6,23.0,5.2,21.4,18.5,0,88.9,4.69,Moderate
+23,Female,Night Owl,Unemployed,0.63,47,Social Media,71,False,10,13.6,33,68.5,38.7,28.4,6.89,17.4,20.9,1,81.7,3.29,Moderate
+22,Female,Intermediate,Student,0.14,34,Messaging,84,False,86,15.3,58,74.7,41.3,31.8,7.46,19.3,20.0,4,78.6,3.61,Mild
+43,Male,Night Owl,Professional,1.67,67,E-Reading,65,True,57,12.5,1,71.1,28.9,14.5,6.36,18.0,22.1,1,92.1,2.99,Mild
+39,Female,Intermediate,Professional,23.88,21,Messaging,55,False,137,16.5,31,61.1,34.4,22.5,5.91,16.1,17.2,2,84.5,4.59,Moderate
+28,Male,Intermediate,Retired,22.46,59,E-Reading,100,True,347,12.9,113,64.9,42.3,32.3,5.7,16.1,21.2,2,87.4,4.4,Moderate
+36,Male,Night Owl,Unemployed,0.85,36,Short-Form Video,54,True,14,15.4,50,71.0,40.7,21.9,6.53,17.8,18.7,2,85.8,4.44,Mild
+21,Female,Night Owl,Student,0.08,51,Gaming,80,True,103,21.1,6,71.2,31.0,38.5,6.45,17.9,16.0,4,77.9,4.73,Moderate
+31,Male,Intermediate,Student,22.88,25,Short-Form Video,47,False,2,17.6,54,71.1,28.0,24.8,7.2,18.9,20.6,2,87.2,3.86,No Debt
+32,Male,Intermediate,Student,23.13,18,Streaming,40,False,58,6.0,132,79.8,48.1,34.3,7.19,23.1,21.4,2,85.6,3.45,No Debt
+24,Non-Binary,Intermediate,Student,0.18,63,Social Media,61,False,35,15.4,21,72.4,13.7,29.5,7.93,17.8,18.4,1,83.0,2.96,Mild
+21,Male,Intermediate,Unemployed,22.96,42,Streaming,96,True,5,16.4,16,68.3,32.9,27.1,7.76,21.7,19.8,0,86.2,2.31,Mild
+20,Male,Early Bird,Retired,21.9,71,Social Media,49,False,7,16.3,6,71.4,38.3,26.4,7.33,16.3,16.6,3,80.6,4.44,Mild
+19,Female,Intermediate,Retired,23.06,57,News,100,False,82,14.2,2,65.3,40.3,29.4,8.2,15.6,17.4,3,76.8,4.42,No Debt
+25,Female,Intermediate,Freelancer,23.67,65,E-Reading,17,False,5,19.3,6,69.5,30.3,9.6,6.92,20.1,17.2,0,89.1,3.15,Mild
+24,Female,Night Owl,Student,2.05,38,News,48,False,100,18.6,27,68.8,43.5,26.8,5.75,15.1,18.8,0,88.0,4.07,Moderate
+35,Male,Night Owl,Freelancer,1.78,52,Messaging,100,True,108,11.9,1,67.7,35.5,25.5,5.2,20.8,15.3,1,80.0,5.2,Moderate
+39,Non-Binary,Intermediate,Freelancer,23.88,47,Social Media,67,False,141,11.5,27,62.2,31.4,30.9,5.49,19.0,21.0,3,78.9,5.46,Moderate
+25,Male,Night Owl,Student,0.99,32,E-Reading,78,False,24,13.7,0,68.8,49.1,24.9,5.96,20.3,18.0,6,75.6,5.3,Moderate
+38,Female,Early Bird,Professional,22.66,66,Short-Form Video,60,False,127,14.6,49,71.8,31.5,44.3,6.43,12.0,19.4,1,81.1,4.95,Mild
+30,Male,Early Bird,Professional,23.76,47,Social Media,42,True,45,10.4,50,66.1,34.2,15.0,7.07,16.6,18.0,2,90.1,3.66,No Debt
+27,Female,Intermediate,Student,23.09,68,Short-Form Video,82,True,35,16.3,3,66.5,37.9,32.8,6.2,15.0,19.9,4,76.4,4.95,Mild
+17,Male,Early Bird,Freelancer,23.44,75,Short-Form Video,54,False,60,11.7,19,69.8,40.9,34.5,7.57,15.1,17.5,2,82.0,4.38,Mild
+38,Male,Night Owl,Unemployed,2.25,69,Short-Form Video,65,True,41,23.0,64,65.6,30.9,26.8,6.71,15.4,19.4,2,78.2,4.52,Mild
+16,Male,Early Bird,Student,21.96,95,Gaming,74,True,66,18.4,57,66.8,27.9,31.3,7.84,15.9,15.6,4,81.6,4.16,Mild
+22,Male,Night Owl,Professional,0.68,206,Short-Form Video,54,False,64,13.9,5,66.7,31.8,38.2,7.07,15.2,13.8,2,81.9,4.47,Mild
+48,Female,Intermediate,Student,0.14,77,Social Media,26,False,6,20.0,0,70.1,40.5,23.0,6.03,19.0,15.6,2,83.6,3.93,Mild
+39,Female,Night Owl,Professional,23.68,77,Gaming,61,False,206,17.7,5,70.1,29.0,37.8,6.64,13.8,12.6,3,73.5,5.84,Mild
+26,Female,Intermediate,Freelancer,23.47,62,Social Media,71,False,49,11.6,2,68.9,22.1,28.5,6.99,21.3,15.4,2,80.3,4.23,Mild
+35,Male,Intermediate,Student,23.27,53,Short-Form Video,62,True,0,14.8,57,67.7,24.4,34.7,5.71,16.7,22.3,1,87.1,4.86,Moderate
+46,Male,Intermediate,Professional,0.71,20,Social Media,38,False,85,21.7,36,58.8,38.2,24.8,5.02,19.0,19.4,4,79.8,5.71,Moderate
+40,Female,Night Owl,Professional,1.29,65,News,52,False,130,20.4,0,58.0,22.9,27.3,6.87,17.1,17.6,8,77.0,5.71,Mild
+32,Female,Night Owl,Unemployed,1.27,29,E-Reading,38,True,170,18.2,9,71.5,57.2,28.6,6.53,20.1,14.7,5,77.7,4.63,Mild
+31,Male,Night Owl,Professional,0.55,28,Short-Form Video,69,False,30,17.9,13,72.9,58.2,35.8,5.75,17.4,17.1,0,79.2,5.34,Moderate
+16,Male,Early Bird,Professional,22.4,96,Short-Form Video,45,False,17,11.1,3,70.0,35.1,30.6,7.57,16.2,20.1,1,78.5,3.7,Mild
+41,Female,Intermediate,Professional,23.42,90,Short-Form Video,52,False,57,13.1,15,69.1,25.1,34.9,6.43,16.5,17.7,2,81.4,4.68,Mild
+27,Male,Night Owl,Freelancer,0.75,19,Social Media,77,False,60,14.7,62,64.6,26.8,27.2,6.51,18.5,16.2,3,86.6,4.84,Mild
+21,Female,Early Bird,Professional,22.63,81,Social Media,92,False,66,18.1,20,69.6,22.6,35.7,6.79,18.8,17.7,2,78.7,4.83,Moderate
+26,Female,Night Owl,Student,0.33,73,Gaming,58,False,19,14.9,17,63.6,48.7,34.4,5.52,15.1,18.9,2,84.3,5.95,Moderate
+28,Male,Intermediate,Student,0.85,22,Social Media,23,False,19,20.9,10,65.5,32.9,14.0,6.68,16.6,18.5,2,86.9,4.31,Mild
+19,Male,Early Bird,Professional,21.98,50,E-Reading,68,False,17,17.5,89,70.2,25.8,18.0,8.87,24.1,19.1,2,81.6,2.23,No Debt
+19,Female,Intermediate,Professional,23.45,72,Social Media,64,False,17,17.6,20,70.7,28.2,30.5,7.94,20.6,15.6,0,80.2,2.95,Mild
+28,Female,Night Owl,Professional,0.94,43,Messaging,88,False,1,14.9,68,64.4,29.0,33.3,6.22,17.9,19.7,1,79.8,4.72,Mild
+16,Female,Night Owl,Professional,1.1,22,Messaging,66,False,51,16.9,13,72.0,25.9,21.1,7.43,15.1,21.9,3,83.7,4.96,Mild
+33,Female,Intermediate,Professional,0.72,49,Streaming,58,False,56,17.5,46,75.4,49.0,33.8,5.44,17.5,19.8,5,73.3,6.1,Moderate
+34,Female,Intermediate,Retired,0.26,51,Streaming,77,False,101,22.6,35,70.9,40.4,37.2,5.92,17.0,14.8,5,78.8,5.33,Moderate
+16,Male,Intermediate,Professional,23.71,77,Gaming,71,True,145,19.9,18,70.8,27.7,30.5,6.96,18.2,16.4,3,83.0,4.72,Moderate
+37,Female,Intermediate,Professional,0.13,16,Messaging,72,False,23,16.0,8,74.4,39.8,21.0,5.92,16.9,15.1,2,85.2,4.45,Moderate
+19,Male,Night Owl,Professional,0.76,47,Short-Form Video,58,False,62,8.4,10,71.7,26.3,15.4,7.16,14.4,20.6,1,87.2,3.96,Mild
+29,Female,Intermediate,Professional,23.35,35,Short-Form Video,70,True,98,16.3,6,74.5,12.6,29.5,7.19,20.2,20.4,0,88.8,4.25,No Debt
+39,Male,Night Owl,Student,1.26,51,E-Reading,80,False,67,17.2,9,74.6,23.7,17.5,7.09,21.5,13.6,2,86.6,2.89,No Debt
+16,Male,Intermediate,Student,0.06,69,Social Media,70,False,24,18.5,17,67.0,30.5,30.8,7.04,12.0,16.0,2,81.6,4.92,Mild
+16,Female,Intermediate,Student,23.2,41,Gaming,100,True,0,12.1,20,65.0,14.6,24.4,7.93,16.8,15.7,3,87.7,3.66,Mild
+28,Male,Night Owl,Professional,0.49,43,E-Reading,58,False,20,18.3,6,63.6,44.0,20.5,6.43,19.3,17.1,3,84.3,4.45,Mild
+39,Female,Intermediate,Unemployed,23.75,39,E-Reading,90,False,37,17.1,17,82.0,36.5,33.3,5.91,18.2,14.8,3,81.6,5.55,Moderate
+17,Female,Early Bird,Student,22.58,50,Short-Form Video,86,False,4,14.6,11,72.5,25.1,36.7,7.93,14.7,17.9,3,82.0,3.69,Mild
+31,Female,Intermediate,Student,23.68,60,E-Reading,67,True,14,15.5,32,74.5,29.1,15.9,7.66,17.1,17.6,1,90.4,2.69,No Debt
+36,Male,Night Owl,Student,2.58,28,Short-Form Video,78,True,3,13.9,66,71.3,26.7,31.7,5.25,15.4,20.7,1,84.9,5.49,Moderate
+42,Male,Intermediate,Retired,23.51,35,Streaming,35,False,149,14.2,10,66.8,42.1,27.1,7.14,18.4,14.3,3,83.0,3.34,No Debt
+16,Female,Night Owl,Professional,1.78,44,Short-Form Video,100,True,0,17.2,63,69.5,38.9,32.4,6.97,13.3,22.6,2,81.7,4.49,Moderate
+29,Female,Early Bird,Professional,23.32,25,Short-Form Video,92,True,90,22.6,64,71.2,42.9,49.8,5.73,10.8,16.7,0,84.8,5.39,Moderate
+16,Male,Early Bird,Freelancer,22.22,58,Social Media,56,True,55,14.5,6,70.1,36.0,35.9,8.2,15.4,17.9,2,83.9,3.39,No Debt
+39,Male,Night Owl,Student,0.64,21,Social Media,62,False,467,19.1,9,70.1,30.6,48.4,6.12,14.2,12.5,4,73.1,5.72,Mild
+42,Male,Early Bird,Freelancer,21.97,36,Messaging,41,False,24,8.2,7,71.4,32.3,24.0,7.68,20.0,15.1,3,89.2,3.39,No Debt
+29,Female,Intermediate,Freelancer,23.03,10,Gaming,73,False,34,14.2,69,72.5,33.4,19.6,6.71,16.9,17.3,1,91.4,3.66,Mild
+28,Male,Night Owl,Freelancer,23.91,28,Social Media,54,True,54,18.4,50,74.4,20.0,24.2,6.75,13.4,20.3,1,85.9,4.02,Mild
+25,Non-Binary,Intermediate,Student,23.74,74,Social Media,38,False,128,12.7,9,72.2,34.4,22.7,6.04,17.0,18.8,3,82.5,5.38,Mild
+35,Male,Intermediate,Professional,23.59,23,Streaming,100,False,132,17.7,24,72.0,41.2,36.6,7.03,16.9,19.4,0,85.9,4.29,No Debt
+16,Female,Intermediate,Student,22.46,14,Social Media,89,False,1,13.7,11,67.8,41.3,26.3,8.38,21.6,18.5,2,82.6,3.2,No Debt
+22,Female,Early Bird,Student,23.04,80,Short-Form Video,59,True,19,15.9,1,75.1,40.9,33.6,7.06,17.8,19.9,1,85.2,4.38,Mild
+33,Male,Intermediate,Professional,23.81,101,Short-Form Video,63,False,99,13.4,33,67.4,39.0,43.9,5.79,18.3,19.9,0,84.6,5.71,Moderate
+41,Female,Night Owl,Unemployed,0.93,48,News,80,False,48,15.2,24,70.5,39.7,23.4,5.9,16.7,18.3,0,90.6,4.36,Moderate
+33,Male,Night Owl,Student,1.41,26,Social Media,61,True,17,6.0,113,75.0,42.0,27.8,6.79,18.4,21.1,1,90.8,4.02,Mild
