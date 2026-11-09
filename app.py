@@ -123,3 +123,57 @@ st.subheader("Confusion Matrix")
 normalize = st.toggle("Show row-normalized percentages", value=False)
 
 counts = confusion_matrix(y_test, predictions, labels=labels)
+if normalize:
+    row_totals = counts.sum(axis=1, keepdims=True)
+    display_matrix = np.divide(
+        counts.astype(float), row_totals,
+        out=np.zeros_like(counts, dtype=float), where=row_totals != 0
+    ) * 100
+    annotations = np.array([[f"{v:.1f}%" for v in row] for row in display_matrix])
+    colorbar_label = "Percentage of actual class"
+else:
+    display_matrix = counts
+    annotations = counts
+    colorbar_label = "Number of observations"
+
+sns.set_theme(style="white")
+fig, ax = plt.subplots(figsize=(10, 6))
+sns.heatmap(
+    display_matrix,
+    annot=annotations,
+    fmt="" if normalize else "d",
+    cmap="BuPu",
+    linewidths=0.8,
+    linecolor="white",
+    xticklabels=labels,
+    yticklabels=labels,
+    cbar_kws={"label": colorbar_label},
+    ax=ax,
+    annot_kws={"size": 11},
+)
+ax.set_xlabel("Predicted Label")
+ax.set_ylabel("Actual Label")
+ax.set_title(f"Confusion Matrix — {selected}", fontsize=14, pad=14)
+ax.tick_params(axis="x", rotation=0)
+ax.tick_params(axis="y", rotation=0)
+fig.tight_layout()
+st.pyplot(fig, use_container_width=True)
+plt.close(fig)
+
+if any(counts.sum(axis=1) == 0):
+    st.caption("A class with no actual test observations has an all-zero row; its recall cannot be assessed from this upload.")
+
+st.subheader("Classification Report")
+report = classification_report(
+    y_test, predictions, labels=labels, output_dict=True, zero_division=0
+)
+st.dataframe(pd.DataFrame(report).transpose().round(4), use_container_width=True)
+
+output = df.copy()
+output["predicted_sleep_debt_category"] = predictions
+st.download_button(
+    "Download predictions",
+    output.to_csv(index=False).encode("utf-8"),
+    file_name="sleep_debt_predictions.csv",
+    mime="text/csv",
+)
